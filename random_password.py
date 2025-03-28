@@ -49,8 +49,32 @@ def main():
 
         else:
             return ten_character_password(length)
-    if length == 11:
-        eleven_character_password(length)
+
+    elif length == 11:
+        if capital_letter == "yes":
+            if number == "yes":
+                if special == "yes":
+                    return eleven_full_character_password(length)
+                else:
+                    return eleven_upper_number_password(length)
+            else:
+                return eleven_upper_character_password(length)
+
+        elif number == "yes":
+            if special == "yes":
+
+                return eleven_number_special_password(length)
+
+            else: 
+                return eleven_number_character_password(length)
+
+        elif special == "yes":
+            return eleven_special_character_password(length)
+
+        else:
+            return eleven_character_password(length)
+
+
     if length == 12:
         twelve_character_password(length)
 """
@@ -63,5 +87,148 @@ def main():
         except ValueError:
             print("Please enter a valid number")
 """
+
+def ten_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 10)
+    password = "".join(temp_lower)
+    print(f"Your password is {password}")
+
+def ten_capital_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 8)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_password = temp_lower + temp_upper
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your capital password is: {password}")
+
+def ten_number_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 8)
+    temp_number = random.sample(numbers, 2)
+    temp_password = temp_lower + temp_number
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    
+def ten_special_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 8)
+    temp_special = random.sample(special_character, 2)
+    temp_password = temp_lower + temp_special
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+
+def ten_capital_number_password(length):
+    temp_lower = random.sample(lower_case_letters, 6)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_number = random.sample(numbers, 2)
+    temp_password = temp_lower + temp_upper + temp_number
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+
+def ten_capital_special_password(length):
+    temp_lower = random.sample(lower_case_letters, 6)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_special = random.sample(special_character,2 )
+    temp_password = temp_lower + temp_upper + temp_special
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+
+def ten_number_special_password(length):
+    temp_lower = random.sample(lower_case_letters, 6)
+    temp_number = random.sample(numbers, 2)
+    temp_special = random.sample(special_character, 2)
+    temp_password = temp_lower + temp_number + temp_special
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+
+def ten_full_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 5)
+    temp_number = random.sample(numbers, 2)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_special = random.sample(special_character, 1)
+    temp_password = temp_lower + temp_number + temp_upper + temp_special
+    mix_password = random.sample(temp_password, 10)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+
+#Eleven Character functions
+
+def eleven_character_password(length):
+    temp_password = random.sample(lower_case_letters, 11)
+    password = "".join(temp_password)
+    print(f"Your password is: {password}")
+    return
+
+def eleven_upper_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 9)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_password = temp_lower + temp_upper
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your Password is: {password}")
+    return
+
+def eleven_number_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 9)
+    temp_number = random.sample(numbers, 2)
+    temp_password = temp_lower + temp_number
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your Password is: {password}")
+    return
+
+def eleven_special_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 9)
+    temp_special - random.sample(special_character, 2)
+    temp_password = temp_lower + temp_special
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    return
+
+def eleven_upper_number_password(length):
+    temp_lower = random.sample(lower_case_letters, 7)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_number = random.sample(numbers, 2)
+    temp_password = temp_lower + temp_upper + temp_number
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    return
+
+def eleven_upper_special_password(length):
+    temp_lower = random.sample(lower_case_letters, 7)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_special = random.sample(special_character, 2)
+    temp_password = temp_lower + temp_upper + temp_special
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    return
+
+def eleven_number_special_password(length):
+    temp_lower = random.sample(lower_case_letters, 7)
+    temp_number = random.sample(numbers, 2)
+    temp_special = random.sample(special_character, 2)
+    temp_password = temp_lower + temp_number + temp_special
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    return
+
+def eleven_full_character_password(length):
+    temp_lower = random.sample(lower_case_letters, 5)
+    temp_upper = random.sample(upper_case_letters, 2)
+    temp_number = random.sample(numbers, 2)
+    temp_special = random.sample(special_character, 2)
+    temp_password = temp_lower + temp_upper + temp_number + temp_special
+    mix_password = random.sample(temp_password, 11)
+    password = "".join(mix_password)
+    print(f"Your password is: {password}")
+    return
+
 
 main()
